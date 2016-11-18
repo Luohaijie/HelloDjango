@@ -17,13 +17,15 @@ from django.conf.urls import url, include
 from HelloDjango.view import hello
 from HelloDjango.view import testdb
 from HelloDjango.view import add
+from HelloDjango.view import weather
 from django.contrib import admin
 
 urlpatterns = [
 		
     url(r'^hello/$', hello), #Django V1.10 没有patterns，使用url，r'^hello/$'匹配192.168.1.38:8000/hello/
-    url(r'^add/(\d+)/(\d+)$', add),#, name = 'add'),
+    url(r'^add/(\d+)/(\d+)$', add, name = 'add'),
     url(r'^$',hello),
     url(r'^admin/', admin.site.urls),
-    url(r'^testdb/$', testdb)
+    url(r'^testdb/$', testdb),
+    url(r'^weather/(\w+)?$', weather, name = 'weather'),
 ]

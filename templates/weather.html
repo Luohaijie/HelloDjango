@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block mainbody %}
+
+{% for info in weatherinfo %}
+	<li>{{info}}</li>
+
+{% endfor %}
+
+{% endblock %}
